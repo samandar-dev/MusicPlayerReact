@@ -66,7 +66,7 @@ function App() {
                 setRepeat={setRepeat}
               />
             </div>
-            <button className='modalBtn' onClick={() => setMenu(!menu)}>www</button>
+            <button className='modalBtn' onClick={() => setMenu(!menu)}>Menu</button>
           </div>
         </div>
       </section>

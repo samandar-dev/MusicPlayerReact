@@ -38,8 +38,18 @@ function Player({
 
   const nextBtnFunc = () => {
     if (randomMus) {
-      console.log(musicIndex);
-      console.log(setMusicIndex(music[+ 1]));
+      setMusicIndex(music[3])
+      const audioplay = audioRef.current.play()
+      audioplay.then(() => (
+        audioRef.current.play()
+      ))
+      setPLayPause(true)
+    }
+  }
+
+  const previBtnFunc = () => {
+    if (repeat) {
+      setMusicIndex(music[3])
       const audioplay = audioRef.current.play()
       audioplay.then(() => (
         audioRef.current.play()
@@ -66,7 +76,7 @@ function Player({
             {randomMus ? <i className='bx bx-shuffle'></i> : <span className="icon-transfer"></span>}
           </button>
           <div className="control__center_btns">
-            <button className='control__prive'>
+            <button className='control__previous' onClick={previBtnFunc}>
               <i className='bx bx-skip-previous'></i>
             </button>
             <button className='control__play_pause' onClick={PlayPauseFuncHandler}>
